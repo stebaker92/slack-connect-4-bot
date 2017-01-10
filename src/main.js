@@ -1,12 +1,14 @@
 require('babel/register');
 const http = require('http');
-
+let token = '';
 try {
     const fs = require('fs');
     const pathToken = process.env.SLACK_CONNECT_4_BOT_TOKEN;
-    const token = pathToken || fs.readFileSync('token.txt', 'utf-8').trim();
+    token = pathToken || fs.readFileSync('token.txt', 'utf-8').trim();
+	console.log("Token is" + token)
 } catch(error) {
     console.log('You need to put your API token in a token.txt file');
+	console.error(error);
     return;
 }
 
