@@ -17,5 +17,5 @@ const bot = new Bot(token);
 bot.login();
 
 http.createServer(function(req, res) {
-    res.end('SLACK_CONNECT_4_BOT');
+    res.end('SLACK_CONNECT_4_BOT is ALIVE!');
 }).listen(process.env.PORT || 5000);
